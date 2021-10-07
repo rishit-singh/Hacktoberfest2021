@@ -15,7 +15,7 @@ There are a few rules you must follow before creating a pull request.
 
 1. Your code should be well written and usable in generic cases.
 2. Test your implementations well before pushing them.
-3. Comment your code where its needed to help others understand your code. 
+3. Comment your code where its needed to help others understand it. 
 4. Use your best programming practices, and optimize the code if you can.
 
 And that's it!
