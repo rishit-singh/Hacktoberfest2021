@@ -3,74 +3,43 @@
 #include <bits/stdc++.h>
 using namespace std;
  
-//define array globally
-const int N = 1e6 +4;
- 
-int a[N];
-int n;//array size
- 
-//element to be searched in array
-   int k;
- 
-bool check(int dig)
-{
-    //element at dig position in array
-    int ele=a[dig];
- 
-    //if k is less than
-    //element at dig position
-    //then we need to bring our higher ending to dig
-    //and then continue further
-    if(k<=ele)
-    {
-        return 1;
-    }
-    else
-    {
-    return 0;
-    }
-}
-void binsrch(int lo,int hi)
+
+
+int binsrch(,int arr[],int lo,int hi,int k)
 {
     while(lo<hi)
     {
         int mid=(lo+hi)/2;
-        if(check(mid))
+        if(arr[mid]==k)
         {
-            hi=mid;
+            return mid;
+        }
+        else if(arr[mid]>k)
+        {
+            hi=mid-1;
         }
         else
-        {
-            lo=mid+1;
-        }
+        lo =mid+1;
     }
-    //if a[lo] is k
-    if(a[lo]==k)
-        cout<<"Element found at index "<<lo;// 0 based indexing
-    else
-        cout<<"Element doesnt exist in array";//element was not in our array
+    
+    return -1;// if k is not present in array//
  
 }
  
  
 int main()
 {  
-    cin>>n;
-   for(int i=0; i<n; i++)
-   {
-    cin>>a[i];
-   }
-   cin>>k;
+   int n=7;
+    int arr[n]={2,3,4,5,6,7,8};
  
    //it is being given array is sorted
    //if not then we have to sort it
  
-   //minimum possible point where our k can be is starting index
-   //so lo=0
-   //also k cannot be outside of array so end point
-   //hi=n
+  //element to be searched in array
+   int k=8;
  
-   binsrch(0,n);
+   int index=binsrch(arr,0,n,k);
+   cout<<index<<endl;
  
     return 0;
 }
