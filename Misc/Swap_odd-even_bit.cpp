@@ -9,7 +9,7 @@ class Solution
 {
     public:
     //Function to swap odd and even bits.
-    unsigned int swapBits(unsigned int n)
+   static unsigned int swapBits(unsigned int n)
     {
     	// Your code here
 int eve= (n & 0xAAAAAAAA); // get value of even position
@@ -33,9 +33,9 @@ int main()
 		unsigned int n;
 		cin>>n;//input n
 		
-		Solution ob;
+		
 		//calling swapBits() method
-		cout << ob.swapBits(n) << endl;
+		cout << Solution::swapBits(n) << endl;
 	}
 	return 0;
 }  
