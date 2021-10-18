@@ -70,7 +70,7 @@ double CalculateCos(double angle, int maxIterations)
 
     angle -= n * PI;
 
-    for (int x = 0; x < maxIterations; x++)
+    for (int x = 1; x <= maxIterations; x++)
     {
         numerator = pow(angle, 2 * x);
         factorial = Factorial(2 * x);
@@ -83,7 +83,9 @@ double CalculateCos(double angle, int maxIterations)
 
 double Cos(double angle)
 {
-    return CalculateCos(RADIANS(angle), 10);
+    return Sin(angle + 1.570796327);
+
+//    return CalculateCos(RADIANS(angle), 10);
 }
 
 #endif
