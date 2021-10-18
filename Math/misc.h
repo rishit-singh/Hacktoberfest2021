@@ -1,9 +1,10 @@
 // Miscellenous math related functions, macros, and globals.
 
 #ifndef MISC_H
+#define MISC_H
 
 #define PI 3.141592654
-#define TWOPI 6.28318530718
+#define TWOPI 6.283185307
 
 #define RADIANS(x) ((PI / 180) * x) // x degrees to radians.
 #define DEGREES(x) ((180 / PI) * x) //x radians to degrees.

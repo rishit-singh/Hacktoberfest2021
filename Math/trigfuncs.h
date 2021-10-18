@@ -1,6 +1,7 @@
 // Common trigonometric function implementations.
 
 #ifndef TRIGFUNCS_H
+#define TRIGFUNCS_H
 
 #include <stdlib.h>
 #include <math.h>
@@ -19,7 +20,7 @@ int GetRecurranceCount(double); // Finds the cyclic function recurrance count fo
 
 int GetRecurranceCount(double angle)
 {
-    return (angle / (TWOPI));
+    return (angle / (PI));
 }
 
 double CalculateSin(double angle, const int maxIterations)
@@ -28,10 +29,10 @@ double CalculateSin(double angle, const int maxIterations)
         numerator = 0,
         factorial = 0;
 
-    /* if (angle > TWOPI) */
-    /*     angle -= TWOPI * (int)(angle / (2 * PI)); */
-     //   angle -= TWOPI * GetRecurranceCount(angle);
+    const int n = GetRecurranceCount(angle), // Gets the repeatation of PI
+        sign = (n % 2 == 1) * -1 || (!(n % 2)); // Quadrant sign
 
+    angle -= n * PI;
 
     for (int x = 0; x < maxIterations; x++)
     {
@@ -41,7 +42,12 @@ double CalculateSin(double angle, const int maxIterations)
         sinval += pow(-1, x) * (numerator / factorial);
     }
 
-    return (sinval);
+    return (sign * sinval);
+}
+
+double Sin(double angle)
+{
+    return CalculateSin(RADIANS(angle), 10);
 }
 
 
