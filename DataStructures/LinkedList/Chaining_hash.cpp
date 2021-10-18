@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-#define size 10
+#define size 10001
 
 struct node{
     int data;
@@ -81,49 +81,4 @@ void display(){
         }
         cout<<endl;
     }
-}
-
-int main(){
-    int ch;
-    while(1){
-        cout<<"**************************************************************"<<endl;
-        cout<<" 1: Insert an element in hash table\n 2: Search an element\n 3: Delete an element\n 4: Display\n 5: Exit\n";
-        cout<<"**************************************************************"<<endl;
-        cout<<"Enter your choice>>>> ";
-        cin>>ch;
-        switch(ch){
-            case 1:
-                int num;
-                cout<<"enter an element: ";
-                cin>>num;
-                insert(num);
-                cout<<endl;
-                break;
-            case 2:
-                int s;
-                cout<<"enter an element to serach: ";
-                cin>>s;
-                search(s);
-                cout<<endl;
-                break;
-            case 3:
-                int d;
-                cout<<"Enter an element to delete: ";
-                cin>>d;
-                del(d);
-                cout<<endl;
-                break;
-            case 4:
-                display();
-                cout<<endl;
-                break;
-            case 5:
-                exit(0);
-            default:
-                cout<<"Enter appropriate option!!!!";
-                cout<<endl;
-                break;
-        }
-    }
-    return 0;
 }
