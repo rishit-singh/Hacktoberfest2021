@@ -120,4 +120,20 @@ double Tan(double angle)
     return (Sin(angle) / Cos(angle));
 }
 
+double Cot(double angle)
+{
+    return (1 / Tan(angle));
+}
+
+double Cosec(double angle)
+{
+    return (1 / Sin(angle));
+}
+
+double Sec(double angle)
+{
+    return (1 / Cos(angle));
+}
+
+
 #endif
