@@ -1,14 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
+// using STL 
 int MaxElement(int arr[], int n)
 {
-  sort(arr, arr + n);
-  return arr[n - 1];
+  int ans = *max_element(arr, arr + n);
+  return ans;
 }
 int MinElement(int arr[], int n)
 {
-  sort(arr, arr + n);
-  return arr[0];
+  int ans = *min_element(arr, arr + n);
+  return ans;
 }
 int main()
 {
