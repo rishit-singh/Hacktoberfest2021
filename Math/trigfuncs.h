@@ -102,10 +102,12 @@ double CalculateTan(double angle, const int maxIterations)
 
     angle -= n * PI;
 
+    int fourthPow = 0;
+
     for (int x = 1; x <= maxIterations; x++)
     {
         factorial = Factorial(2 * x);
-        numerator = (pow(4, x) * (pow(4, x) - 1) * bernoulliNumbers[x] * pow(angle, (2 * x) - 1));
+        numerator = ((fourthPow = pow(4, x)) * (fourthPow - 1) * bernoulliNumbers[x] * pow(angle, (2 * x) - 1));
 
         tanval +=  pow(-1, x - 1) * (numerator / factorial);
     }
@@ -116,8 +118,6 @@ double CalculateTan(double angle, const int maxIterations)
 double Tan(double angle)
 {
     return (Sin(angle) / Cos(angle));
-
-    //return CalculateTan(RADIANS(angle), 10);
 }
 
 #endif
