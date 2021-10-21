@@ -1,5 +1,8 @@
-# Hacktoberfest2021
-My Hacktoberfest repository.
+# </>Hacktoberfest2021</>
+
+![](https://hacktoberfest.digitalocean.com/_nuxt/img/logo-hacktoberfest-full.f42e3b1.svg)
+
+## My Hacktoberfest repository.
 
 ## Introduction
 
